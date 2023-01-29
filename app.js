@@ -10,6 +10,8 @@ window.addEventListener("load", () => {
   let locationTimezone = document.querySelector(".location-timezone");
 
   const geolocation = navigator.geolocation;
+
+  // Free resource, remove it from repo (security)
   const API_KEY = "350dbfa05e5f155a096a31789d1045f4";
 
   const storeJSON = (data) => {
