@@ -67,6 +67,7 @@ window.addEventListener("load", () => {
           storeJSON(data);
           console.log("dataSet", dataSet);
           const { temp } = dataSet.main;
+          const { icon } = dataSet.weather[0];
           const tempDegreeCelsius = kelvinToCelsius(temp);
           const tempDescription = summary(tempDegreeCelsius);
           const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -74,7 +75,21 @@ window.addEventListener("load", () => {
           temperatureDegree.textContent = tempDegreeCelsius;
           temperatureDescription.textContent = tempDescription;
           locationTimezone.textContent = timeZone;
+          setIcon(icon);
         });
     });
   }
+
+  const setIcon = (iconID) => {
+    const url = `http://openweathermap.org/img/wn/${iconID}@2x.png`;
+
+    let image = document.createElement("img");
+    let imageParent = document.querySelector(".location");
+
+    image.id = "id";
+    image.className = "weather-icon";
+    image.src = url; // image.src = "IMAGE URL/PATH"
+
+    imageParent.appendChild(image);
+  };
 });
