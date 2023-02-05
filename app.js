@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
 
   const geolocation = navigator.geolocation;
 
-  // Free resource, remove it from repo (security)
+  // Free resource, remove it from repo
   const API_KEY = "350dbfa05e5f155a096a31789d1045f4";
 
   const storeJSON = (data) => {
@@ -88,7 +88,7 @@ window.addEventListener("load", () => {
 
     image.id = "id";
     image.className = "weather-icon";
-    image.src = url; // image.src = "IMAGE URL/PATH"
+    image.src = url;
 
     imageParent.appendChild(image);
   };
